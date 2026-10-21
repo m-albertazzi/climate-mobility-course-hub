@@ -222,6 +222,7 @@
       if (a.getAttribute("data-panel") === id) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
     var panel = document.getElementById("panel-" + id);
+    document.documentElement.setAttribute("data-tab", id);
     document.title = (panel.getAttribute("data-title") || "") + " · " + SITE;
     closeMenu(false);
     if (!firstRoute || userInitiated) {

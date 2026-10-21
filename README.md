@@ -27,7 +27,7 @@ assets/fonts/       Noto Sans (SIL Open Font License)
 - To add a session, copy an existing block and give it the next `number` and the right `week`.
 - Times are interpreted as CET (UTC+1), which applies to every session in this course. If a session falls in summer time, change `utcOffsetHours` in `config` or the session dates.
 
-**Overview and Course requirements** — edit the text directly in `index.html` (search for the section, e.g. `panel-course-requirements`). Deadlines, the course code (A9719044) and the course contact (migration@itcilo.org) are also in `index.html`.
+**Overview and Course requirements** (the hero image header is shared by all tabs and sits at the top of `<main>`) — edit the text directly in `index.html` (search for the section, e.g. `panel-course-requirements`). Deadlines, the course code (A9719044) and the course contact (migration@itcilo.org) are also in `index.html`.
 
 **Hiding the “To be confirmed” notices** — once the course team has settled the open points, set `showDraftNotices: false` in `js/data.js`. Individual “to be confirmed” labels on speakers are changed by editing the speaker (`status: "listed"`) or by removing the entry.
 

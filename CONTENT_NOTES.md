@@ -28,6 +28,13 @@ Not used: prices, fees, application dates or procedures, the other course’s hu
 8. **Speakers** — by the course team’s instruction, speaker names are not shown in the timetable; they appear only in the Resource Persons tab.
 9. **Deadlines and certificate (provided by the course team)** — forums and quizzes: 6 December 2026; final assignment: 18 December 2026; Certificate of Achievement: passing mark of 60 out of 100 points + the final assignment (wording kept as supplied). Course contact: migration@itcilo.org. Illustration credit: Samuele Omati.
 
+10. **Overview text supplied by the course team** (Learning approach, Recognition, Practical information) is published as supplied. Points to double-check against this course:
+    - “8 online modules”: the agenda lists an Introduction plus five modules (and the course page says “a number of online modules”).
+    - “Diploma for Social Protection Managers”: not mentioned on this course’s page (the Labour Migration Diploma and Academy are).
+    - “Dates: 27 October – 3 December 2026” (live sessions) differs from the course dates 26 October – 4 December 2026 used in the hero.
+    - “Certificate of Achievement … complete all assessments and the final assignment” should be read together with the 60-out-of-100-points mark on Course requirements.
+11. **Hero image** is shown as the header on every tab; the Overview facts block, module table, key dates and the requirements “to be confirmed” notice were removed at the course team’s request.
+
 ## Resource persons
 
 - Not displayed because incomplete or unresolved: “George GiZ from Kenya” (Session 8, no surname); “Clara Van Panhuysv” (Session 10, surname looks mistyped; annotation “check with Luca”).

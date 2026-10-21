@@ -76,14 +76,17 @@
     <div class="content">
       <main id="main" tabindex="-1">
 
-        <!-- ================= OVERVIEW ================= -->
-        <section class="panel" id="panel-overview" data-title="Overview" aria-labelledby="h-overview">
-          <header class="hero">
-            <picture class="hero__media">
+        <div class="banner">
+          <picture class="banner__media">
               <source type="image/webp" srcset="assets/img/course-hero-900.webp 900w, assets/img/course-hero-1600.webp 1600w" sizes="(min-width: 1024px) 900px, 100vw">
               <img src="assets/img/course-hero-1600.jpg" srcset="assets/img/course-hero-900.jpg 900w, assets/img/course-hero-1600.jpg 1600w" sizes="(min-width: 1024px) 900px, 100vw" width="1600" height="1600" alt="Illustration of two people, each carrying a child on their back, walking away from the viewer across an orange, sun-baked landscape under a hazy, pale sky.">
             </picture>
-            <div class="hero__card">
+        </div>
+
+        <!-- ================= OVERVIEW ================= -->
+        <section class="panel" id="panel-overview" data-title="Overview" aria-labelledby="h-overview">
+          <header class="hero">
+            <div class="hero__card hero-card">
               <p class="eyebrow">ITCILO · Course Hub · A9719044</p>
               <h1 id="h-overview" tabindex="-1">Exploring the labour dimensions of climate change and human mobility</h1>
               <p class="hero__sub">Rights-based responses to climate induced mobility</p>
@@ -108,35 +111,10 @@
               <p>The course does not give preference to migration over local adaptation: it presents labour mobility as one tool in the climate adaptation toolbox. It acknowledges that people already move, and will continue to do so, for different reasons in the context of climate change, and explores how labour market and employment strategies — including labour mobility — can help countries of origin and destination reduce vulnerabilities, build resilience, increase protection and benefit from the opportunities.</p>
             </section>
 
-            <section class="facts" aria-labelledby="h-facts">
-              <h2 id="h-facts" class="sr-only">Key facts</h2>
-              <dl class="facts__grid">
-                <div><dt>Course code</dt><dd>A9719044</dd></div>
-                <div><dt>Course dates</dt><dd>26 October – 4 December 2026</dd></div>
-                <div><dt>Duration</dt><dd>6 weeks, about 60 learning hours (5 to 10 hours per week)</dd></div>
-                <div><dt>Format</dt><dd>Online, with weekly forum, weekly quiz and group work</dd></div>
-                <div><dt>Live sessions</dt><dd>12 sessions on Zoom, Tuesdays and Thursdays, 10:00 – 11:30 CET</dd></div>
-                <div><dt>First / last live session</dt><dd>27 October / 3 December 2026</dd></div>
-                <div><dt>Language</dt><dd>English</dd></div>
-              </dl>
-              <p class="source-note">Duration, learning hours and language are taken from the course webpage; the other details from the annotated agenda.</p>
-            </section>
-
-            <div class="two-col">
-              <section class="card" aria-labelledby="h-who">
+            <section class="card" aria-labelledby="h-who">
                 <h2 id="h-who">Who the course is for</h2>
                 <p>The course is designed for policy makers, professionals, practitioners and experts wishing to develop their knowledge and operational capacity in relation to the labour dimensions of human mobility in the context of climate change impacts. Its overall aim is to strengthen knowledge and capacity, including by zooming in on existing practices, rather than prescribing specific techniques and tools.</p>
               </section>
-              <section class="card" aria-labelledby="h-how">
-                <h2 id="h-how">How the course works</h2>
-                <ol class="steps">
-                  <li><strong>Self-paced learning.</strong> Work through the course materials at your own pace, before and between the live sessions.</li>
-                  <li><strong>Live sessions and weekly activities.</strong> Two live online sessions a week, a weekly forum, a weekly quiz and group work on three country case studies.</li>
-                  <li><strong>End-of-course assignment.</strong> An individual final assignment for those who wish to obtain a Certificate of Achievement.</li>
-                </ol>
-                <p class="source-note">The three phases are described on the course webpage; see <a href="#course-requirements">Course requirements</a> for what counts towards completion.</p>
-              </section>
-            </div>
 
             <section class="card" aria-labelledby="h-objectives">
               <h2 id="h-objectives">Learning objectives</h2>
@@ -162,37 +140,63 @@
               </div>
             </section>
 
-            <section class="card" aria-labelledby="h-modules">
-              <h2 id="h-modules">Course modules and live sessions</h2>
-              <p>The first two modules establish the concepts and context of climate change and human and labour mobility. Three substantive modules then build operational knowledge on governance, policies and strategies, and decent work in the context of climate labour mobility.</p>
-              <div class="table-wrap">
-                <table class="table">
-                  <caption class="sr-only">Course modules and the live sessions in which they are covered</caption>
-                  <thead><tr><th scope="col">Module</th><th scope="col">Title</th><th scope="col">Live session(s)</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row">Intro</th><td>Introduction and key concepts</td><td>Sessions 1–2</td></tr>
-                    <tr><th scope="row">1</th><td>Climate Change, Human Mobility, and the World of Work</td><td>Session 2</td></tr>
-                    <tr><th scope="row">2</th><td>Principles and Norms for a Rights-Based Response to the Labour Dimensions of Climate Mobility</td><td>Sessions 3–4</td></tr>
-                    <tr><th scope="row">3</th><td>International Governance of Climate Mobility</td><td>Sessions 7–8, 11</td></tr>
-                    <tr><th scope="row">4</th><td>Labour Policies and Strategies in Response to Climate Mobility</td><td>Sessions 4, 5, 9, 11</td></tr>
-                    <tr><th scope="row">5</th><td>Promoting Decent Work in the Context of Climate Mobility</td><td>Sessions 6, 9, 10, 11</td></tr>
-                    <tr><th scope="row">Group work</th><td>Country case studies: Zimbabwe, Barbuda, Tuvalu</td><td>Session 12</td></tr>
-                  </tbody>
-                </table>
-              </div>
+            <section class="card block" aria-labelledby="h-approach">
+              <p class="eyebrow">Learning approach</p>
+              <h2 id="h-approach">How the course works</h2>
+              <p>The course consists of 8 online modules offered through the ITCILO e-Campus online platform, to be completed over six weeks for an estimated 60 learning hours. It is broken down into three phases.</p>
+              <ol class="phases">
+                <li class="phase">
+                  <span class="phase__num" aria-hidden="true">1</span>
+                  <p class="phase__tag">Phase 1 · Asynchronous</p>
+                  <h3>Flexible learning</h3>
+                  <p>Self-guided online learning on e-Campus, forum of discussion facilitated by experts, and assessment throughout the different phases of the course.</p>
+                </li>
+                <li class="phase">
+                  <span class="phase__num" aria-hidden="true">2</span>
+                  <p class="phase__tag">Phase 2 · Synchronous</p>
+                  <h3>“Real time” learning</h3>
+                  <p>Live interactive sessions and engaging video presentations by highly experienced trainers, blended with individual and collaborative group exercises, peer-to-peer assessment and online technical forums on e-Campus.</p>
+                </li>
+                <li class="phase">
+                  <span class="phase__num" aria-hidden="true">3</span>
+                  <p class="phase__tag">Phase 3 · Asynchronous</p>
+                  <h3>End of course assignment</h3>
+                  <p>An individual assignment applying the teachings acquired during the course.</p>
+                </li>
+              </ol>
+              <ul class="features">
+                <li>
+                  <h3>Global perspective</h3>
+                  <p>An action-oriented, highly participative approach, with particular attention to sharing international experiences with a view to their adaptation and practical application, including “good practices” presented through case studies.</p>
+                </li>
+                <li>
+                  <h3>Integrated e-learning</h3>
+                  <p>An innovative e-learning experience combining self-paced modules, webinars and discussions, case studies, forum debates, role-play exercises and group work.</p>
+                </li>
+                <li>
+                  <h3>Peer-to-peer learning</h3>
+                  <p>Practitioners from different parts of the world and different backgrounds join the e-learning to share their concrete experience with participants.</p>
+                </li>
+              </ul>
             </section>
 
-            <section class="card" aria-labelledby="h-key-dates">
-              <h2 id="h-key-dates">Key dates</h2>
-              <ul class="dates">
-                <li><span class="dates__when">26 October 2026</span><span>Course starts (Week 1)</span></li>
-                <li><span class="dates__when">27 October 2026</span><span>Session 1 — Opening Webinar, 10:00 – 11:30 CET</span></li>
-                <li><span class="dates__when">End of each week</span><span>Weekly quiz (Weeks 1–6)</span></li>
-                <li><span class="dates__when">3 December 2026</span><span>Session 12 — Group work presentations and Closing Ceremony, 10:00 – 11:30 CET</span></li>
-                <li><span class="dates__when">4 December 2026</span><span>Course ends</span></li>
-                <li><span class="dates__when">6 December 2026</span><span>Deadline for the weekly forums and quizzes</span></li>
-                <li><span class="dates__when">18 December 2026</span><span>Deadline for the final assignment</span></li>
-              </ul>
+            <section class="card block" aria-labelledby="h-recognition">
+              <p class="eyebrow">Recognition</p>
+              <h2 id="h-recognition">Certificate and diplomas</h2>
+              <p>Participants who successfully complete all assessments and the final assignment will receive a <strong>Certificate of Achievement</strong>. See <a href="#course-requirements">Course requirements</a> for how the assessment works.</p>
+              <p>This course qualifies for the <strong>ITCILO Diploma for Labour Migration Experts and Practitioners</strong>: take the Academy on Labour Migration (three courses out of all eligible courses within a five-year period) and complete a capstone project. It also qualifies for the <strong>Diploma for Social Protection Managers</strong>.</p>
+            </section>
+
+            <section class="card block" aria-labelledby="h-practical">
+              <p class="eyebrow">Practical information</p>
+              <h2 id="h-practical">Good to know</h2>
+              <dl class="info">
+                <div><dt>Dates</dt><dd>27 October – 3 December 2026</dd></div>
+                <div><dt>Format</dt><dd>Online, on the ITCILO e-Campus, with live sessions</dd></div>
+                <div><dt>Language</dt><dd>Learning materials and teaching are delivered online in English</dd></div>
+                <div><dt>Time commitment</dt><dd>5–10 hours per week</dd></div>
+                <div><dt>Contact</dt><dd><a href="mailto:migration@itcilo.org">migration@itcilo.org</a></dd></div>
+              </dl>
             </section>
 
             <section aria-labelledby="h-explore">
@@ -296,13 +300,6 @@
               </ul>
             </section>
 
-            <section class="callout callout--draft draft-notice" aria-labelledby="h-tbc">
-              <h2 id="h-tbc"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>To be confirmed by the course team</h2>
-              <ul>
-                <li><strong>Final assignment.</strong> Topic, format and instructions are not yet available.</li>
-                <li><strong>Group work.</strong> How groups and case studies are allocated is not yet stated.</li>
-              </ul>
-            </section>
           </div>
         </section>
 
