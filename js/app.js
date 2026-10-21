@@ -144,10 +144,14 @@
     if (el) { el.classList.add("session--next"); var b = el.querySelector("[data-next-badge]"); if (b) b.hidden = false; }
     if (box) {
       var live = utcOf(n, n.start).getTime() <= Date.now();
+      var zUrl = isHttps(n.zoomUrl) ? n.zoomUrl : (isHttps(cfg.zoomUrl) ? cfg.zoomUrl : "");
+      var zBtn = zUrl
+        ? '<a class="btn btn--primary" href="' + esc(zUrl) + '" target="_blank" rel="noopener noreferrer">' + icon("video") + 'Join on Zoom<span class="sr-only"> (opens in a new tab)</span></a>'
+        : '<button type="button" class="btn" disabled aria-disabled="true">' + icon("video") + 'Zoom link coming soon</button>';
       box.innerHTML = '<div><p class="eyebrow">' + (live ? "Happening now" : "Next live session") + "</p>" +
         "<strong>Session " + n.number + ": " + esc(n.title) + "</strong>" +
         "<p>" + esc(longDate(n)) + ", " + timeLabel(n.start) + " – " + timeLabel(n.end) + " " + esc(cfg.timezoneLabel) + "</p></div>" +
-        '<a class="btn btn--secondary" href="#timetable" data-goto-session="' + n.number + '">See session details</a>';
+        '<div class="btns">' + zBtn + '<a class="btn btn--secondary" href="#timetable" data-goto-session="' + n.number + '">See session details</a></div>';
       box.hidden = false;
     }
   }
