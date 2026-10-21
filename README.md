@@ -42,7 +42,7 @@ feedbackUrl: "",           // paste the https:// feedback form link here
 
 - With a `zoomUrl`, every online session shows a working **Join on Zoom** button. Without one, it shows a disabled **Zoom link coming soon** button.
 - To give one session its own link, add `zoomUrl: "https://…"` to that session.
-- With a `feedbackUrl`, the Feedback tab shows an **Open the feedback form** button; without one it shows a disabled **Feedback link coming soon** placeholder.
+- With a `feedbackUrl`, the Feedback tab shows an **Open the feedback form** button; without one it shows a disabled **Feedback form link coming soon** placeholder.
 - Only `https://` links are accepted.
 
 ## Resource-person photographs

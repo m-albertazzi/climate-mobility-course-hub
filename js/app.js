@@ -197,8 +197,8 @@
       a.innerHTML = '<p>Please share your feedback on the course using the link below.</p><a class="btn btn--primary" href="' + esc(cfg.feedbackUrl) + '" target="_blank" rel="noopener noreferrer">Open the feedback form' + icon("external") + '<span class="sr-only"> (opens in a new tab)</span></a>';
       n.textContent = "";
     } else {
-      a.innerHTML = '<p>The feedback form for the 2026 cohort has not been published yet.</p><button type="button" class="btn" disabled aria-disabled="true" aria-describedby="feedback-note">Feedback link coming soon</button>';
-      n.textContent = "Placeholder — the course team will add the feedback link here.";
+      a.innerHTML = '<p>The feedback form for the 2026 cohort has not been published yet.</p><button type="button" class="btn" disabled aria-disabled="true" aria-describedby="feedback-note">Feedback form link coming soon</button>';
+      n.textContent = "Placeholder — the course team will add the feedback form link here.";
     }
   }
 
