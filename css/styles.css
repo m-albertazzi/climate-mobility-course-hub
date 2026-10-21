@@ -151,13 +151,14 @@ main { flex: 1; width: 100%; max-width: calc(var(--content-max) + 80px); margin:
 .site-header__sub { margin: .6em 0 0; color: #f0d9d2; font-size: 1rem; }
 .site-header :focus-visible { outline-color: #fff; }
 .site-header__media { display: block; min-height: 0; }
-.site-header__media img { width: 100%; height: 100%; aspect-ratio: 16 / 7; object-fit: cover; object-position: 50% 78%; }
+.site-header__media img { width: 100%; height: 100%; aspect-ratio: 16 / 7; object-fit: cover; object-position: 50% 76%; }  /* figures sit at 51–82% of the image height, centred horizontally */
 @media (min-width: 1024px) {
-  .site-header { grid-template-columns: var(--sidebar-w) minmax(0, 1fr) minmax(320px, 36%); min-height: 168px; }
+  .site-header { grid-template-columns: var(--sidebar-w) minmax(0, 1fr) clamp(260px, 30%, 560px); }
   .site-header__logo { display: flex; }
   .site-header__title { padding: 28px 40px; }
+  .site-header__media { position: relative; align-self: stretch; }
+  .site-header__media::before { content: ""; display: block; padding-top: 40%; } /* keeps the picture at least 5:2 so the figures are never cropped */
   .site-header__media img { aspect-ratio: auto; position: absolute; inset: 0; }
-  .site-header__media { position: relative; }
 }
 
 /* ---------- hero ---------- */
