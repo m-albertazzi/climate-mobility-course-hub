@@ -39,10 +39,26 @@
   </svg>
 
   <div class="layout">
+    <!-- ============ HEADER BANNER (all tabs) ============ -->
+    <header class="site-header">
+      <a class="site-header__logo" href="#overview" aria-label="ITCILO — International Training Centre of the ILO. Go to Overview">
+        <img class="logo" src="assets/img/itcilo-logo.png" width="1052" height="485" alt="ITCILO – International Training Centre of the ILO">
+      </a>
+      <div class="site-header__title">
+        <p class="site-header__eyebrow">ITCILO · Course Hub · A9719044</p>
+        <p class="site-header__name"><a href="#overview">Exploring the labour dimensions of climate change and human mobility</a></p>
+        <p class="site-header__sub">Rights-based responses to climate induced mobility</p>
+      </div>
+      <picture class="site-header__media">
+        <source type="image/webp" srcset="assets/img/course-hero-900.webp 900w, assets/img/course-hero-1600.webp 1600w" sizes="(min-width: 1024px) 460px, 100vw">
+        <img src="assets/img/course-hero-1600.jpg" srcset="assets/img/course-hero-900.jpg 900w, assets/img/course-hero-1600.jpg 1600w" sizes="(min-width: 1024px) 460px, 100vw" width="1600" height="1600" alt="Illustration of two people, each carrying a child on their back, walking away from the viewer across an orange, sun-baked landscape under a hazy, pale sky.">
+      </picture>
+    </header>
+
     <!-- ============ SIDEBAR / MOBILE MENU ============ -->
     <aside class="sidebar" aria-label="Course hub navigation">
       <div class="sidebar__top">
-        <a class="logo-link" href="#overview" aria-label="ITCILO — International Training Centre of the ILO. Go to Overview">
+        <a class="logo-link logo-link--mobile" href="#overview" aria-label="ITCILO — International Training Centre of the ILO. Go to Overview">
           <img class="logo" src="assets/img/itcilo-logo.png" width="1052" height="485" alt="ITCILO – International Training Centre of the ILO">
         </a>
         <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="sidebar-panel">
@@ -76,34 +92,25 @@
     <div class="content">
       <main id="main" tabindex="-1">
 
-        <div class="banner">
-          <picture class="banner__media">
-              <source type="image/webp" srcset="assets/img/course-hero-900.webp 900w, assets/img/course-hero-1600.webp 1600w" sizes="(min-width: 1024px) 900px, 100vw">
-              <img src="assets/img/course-hero-1600.jpg" srcset="assets/img/course-hero-900.jpg 900w, assets/img/course-hero-1600.jpg 1600w" sizes="(min-width: 1024px) 900px, 100vw" width="1600" height="1600" alt="Illustration of two people, each carrying a child on their back, walking away from the viewer across an orange, sun-baked landscape under a hazy, pale sky.">
-            </picture>
-        </div>
-
         <!-- ================= OVERVIEW ================= -->
         <section class="panel" id="panel-overview" data-title="Overview" aria-labelledby="h-overview">
-          <header class="hero">
-            <div class="hero__card hero-card">
-              <p class="eyebrow">ITCILO · Course Hub · A9719044</p>
-              <h1 id="h-overview" tabindex="-1">Exploring the labour dimensions of climate change and human mobility</h1>
-              <p class="hero__sub">Rights-based responses to climate induced mobility</p>
-              <ul class="chips" aria-label="Course at a glance">
-                <li><svg class="icon" aria-hidden="true"><use href="#i-timetable"/></svg>26 October – 4 December 2026</li>
-                <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>6 weeks · online</li>
-                <li><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg>12 live sessions on Zoom</li>
-              </ul>
-              <div class="btn-row">
-                <a class="btn btn--primary" href="#timetable">View the timetable</a>
-              </div>
-              <div class="btn-row btn-row--tight">
-                <a class="btn btn--secondary btn--small" href="#course-requirements">Course requirements</a>
-                <a class="btn btn--secondary btn--small" href="#resource-persons">Resource Persons</a>
-                <a class="btn btn--secondary btn--small" href="#participants">Participants</a>
-                <a class="btn btn--secondary btn--small" href="#feedback">Feedback</a>
-              </div>
+          <header class="view-head">
+            <p class="eyebrow">Overview</p>
+            <h1 id="h-overview" tabindex="-1">Welcome to the course hub</h1>
+            <p class="lead">Everything you need to follow the course from start to finish: the timetable, what counts towards completion, the resource persons and the feedback form.</p>
+            <ul class="chips" aria-label="Course at a glance">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-timetable"/></svg>26 October – 4 December 2026</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>6 weeks · online</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg>12 live sessions on Zoom</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="#timetable">View the timetable</a>
+            </div>
+            <div class="btn-row btn-row--tight">
+              <a class="btn btn--secondary btn--small" href="#course-requirements">Course requirements</a>
+              <a class="btn btn--secondary btn--small" href="#resource-persons">Resource Persons</a>
+              <a class="btn btn--secondary btn--small" href="#participants">Participants</a>
+              <a class="btn btn--secondary btn--small" href="#feedback">Feedback</a>
             </div>
           </header>
 
