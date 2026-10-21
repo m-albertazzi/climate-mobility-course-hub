@@ -21,13 +21,13 @@ assets/fonts/       Noto Sans (SIL Open Font License)
 ## Updating content
 
 **Sessions and timetable** — edit `js/data.js`.
-- `weeks[]`: week title, dates, suggested reading and the weekly forum prompt.
-- `sessions[]`: title, date (`YYYY-MM-DD`), `start`/`end` (CET clock times), `speakers`, `abstract`, `objectives`.
+- `weeks[]`: week number, title and dates.
+- `sessions[]`: title, date (`YYYY-MM-DD`), `start`/`end` (CET clock times), `abstract` (the 2–3 line summary), `fullAbstract` and `objectives` (shown in the “Full abstract and learning objectives” drop-down). Speaker names are deliberately not shown in the timetable.
 - `format` is `"online"` (shows the Zoom button), `"in-person"` (shows an “In person” label, no Zoom button) or `"independent"`.
 - To add a session, copy an existing block and give it the next `number` and the right `week`.
 - Times are interpreted as CET (UTC+1), which applies to every session in this course. If a session falls in summer time, change `utcOffsetHours` in `config` or the session dates.
 
-**Overview and Course requirements** — edit the text directly in `index.html` (search for the section, e.g. `panel-course-requirements`).
+**Overview and Course requirements** — edit the text directly in `index.html` (search for the section, e.g. `panel-course-requirements`). Deadlines, the course code (A9719044) and the course contact (migration@itcilo.org) are also in `index.html`.
 
 **Hiding the “To be confirmed” notices** — once the course team has settled the open points, set `showDraftNotices: false` in `js/data.js`. Individual “to be confirmed” labels on speakers are changed by editing the speaker (`status: "listed"`) or by removing the entry.
 
@@ -80,5 +80,5 @@ All paths are relative, so the site works under the project path. The `.nojekyll
 
 - ITCILO logo and brand: International Training Centre of the ILO.
 - Fonts: Noto Sans, SIL Open Font License 1.1 (`assets/fonts/OFL-NotoSans.txt`).
-- Course illustration: supplied by the course team; **the artist credit has not been supplied** — add it to the footer in `index.html` when known.
+- Course illustration: Samuele Omati (credited in the footer).
 - The course handbook and module texts are background material only and are deliberately not part of this repository.

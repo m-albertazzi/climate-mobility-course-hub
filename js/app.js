@@ -55,22 +55,6 @@
     } catch (e) { return ""; }
   }
 
-  function speakersHtml(s) {
-    var parts = [];
-    (s.speakers || []).forEach(function (p) {
-      var txt = "<strong>" + esc(p.name) + "</strong>" + (p.org ? ", " + esc(p.org) : "");
-      if (p.status === "tbc") txt += " <em>(to be confirmed)</em>";
-      parts.push(txt);
-    });
-    var out = "";
-    if (parts.length) out = "<strong>Speaker" + (parts.length > 1 ? "s" : "") + ":</strong> " + parts.join("; ");
-    var anyTbc = (s.speakers || []).some(function (p) { return p.status === "tbc"; });
-    if (s.speakersNote && (!parts.length || anyTbc)) {
-      out += (out ? " · " : "") + '<span class="draft-notice">' + esc(s.speakersNote) + "</span>";
-    }
-    return out;
-  }
-
   function zoomHtml(s) {
     var url = isHttps(s.zoomUrl) ? s.zoomUrl : (isHttps(cfg.zoomUrl) ? cfg.zoomUrl : "");
     if (s.format !== "online") return "";
@@ -101,33 +85,18 @@
       (s.titleTbc ? '<span class="badge badge--tbc draft-notice">Title to be confirmed</span>' : "") + "</div>";
     h += '<p class="session__num">Session ' + s.number + "</p>";
     h += '<h3 id="st-' + s.number + '">' + esc(s.title) + "</h3>";
-    var sp = speakersHtml(s);
-    if (sp) h += '<p class="session__speakers">' + sp + "</p>";
     h += '<p class="session__abstract">' + esc(s.abstract) + "</p>";
-    if (s.objectives && s.objectives.length) {
-      h += "<details><summary>Learning objectives</summary><p>By the end of the session, participants will be able to:</p><ul>" +
-        s.objectives.map(function (o) { return "<li>" + esc(o) + "</li>"; }).join("") + "</ul></details>";
+    if (s.fullAbstract || (s.objectives && s.objectives.length)) {
+      h += "<details><summary>Full abstract and learning objectives</summary>";
+      if (s.fullAbstract) h += "<p>" + esc(s.fullAbstract) + "</p>";
+      if (s.objectives && s.objectives.length) {
+        h += "<h4>By the end of the session, participants will be able to:</h4><ul>" +
+          s.objectives.map(function (o) { return "<li>" + esc(o) + "</li>"; }).join("") + "</ul>";
+      }
+      h += "</details>";
     }
     var z = zoomHtml(s);
     if (z) h += '<div class="session__actions">' + z + "</div>";
-    h += "</div></article>";
-    return h;
-  }
-
-  function independentHtml(w) {
-    var h = '<article class="session session--independent" aria-label="Week ' + w.number + ' independent activities">';
-    h += '<div class="session__when"><div class="datebox" aria-hidden="true"><span class="datebox__dow">Week</span><span class="datebox__day">' + w.number + '</span><span class="datebox__mon">Self-paced</span></div>' +
-      '<p class="session__time">' + esc(w.dates) + "<small>Complete during the week</small></p></div>";
-    h += '<div class="session__body"><div class="session__badges">' + formatBadge("independent") + "</div>";
-    h += "<h3>Week " + w.number + ": reading, forum and quiz</h3>";
-    if (w.reading && w.reading.length) {
-      h += '<details class="reading"><summary>Suggested reading (before the live sessions)</summary><ul>' +
-        w.reading.map(function (r) { return "<li><strong>" + esc(r.when) + "</strong> — " + esc(r.text) + "</li>"; }).join("") + "</ul></details>";
-    }
-    if (w.forum) {
-      h += "<details><summary>Weekly forum discussion prompt</summary><p>" + esc(w.forum.context) + '</p><p class="forum-q"><b>Reflection question:</b> ' + esc(w.forum.question) + "</p></details>";
-    }
-    h += "<details><summary>Weekly quiz</summary><p>At the end of the week, complete a quiz of 10 multiple-choice questions (each correct answer earns 0.5 points; each weekly quiz is worth up to 5 points). The quiz deadline is not stated in the supplied materials.</p></details>";
     h += "</div></article>";
     return h;
   }
@@ -142,7 +111,7 @@
         .sort(function (a, b) { return utcOf(a, a.start) - utcOf(b, b.start); });
       html += '<section class="week" id="week-' + w.number + '" aria-labelledby="wh-' + w.number + '">';
       html += '<div class="week__head"><span class="week__num">Week ' + w.number + '</span><h2 id="wh-' + w.number + '" tabindex="-1">' + esc(w.title) + '</h2><p class="week__dates">' + esc(w.dates) + "</p></div>";
-      html += '<div class="week__list">' + sessions.map(sessionHtml).join("") + independentHtml(w) + "</div></section>";
+      html += '<div class="week__list">' + sessions.map(sessionHtml).join("") + "</div></section>";
       navHtml += '<li><button type="button" data-week="' + w.number + '">Week ' + w.number + "</button></li>";
     });
     list.innerHTML = html;
