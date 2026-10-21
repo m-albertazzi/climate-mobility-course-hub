@@ -15,7 +15,7 @@ window.COURSE = {
     zoomUrl: "https://itcilo-org.zoom.us/j/61421822106",
 
     /* Feedback form link. Leave empty to show the "Feedback link coming soon" placeholder. */
-    feedbackUrl: "",
+    feedbackUrl: "https://ecampus.itcilo.org/mod/feedback/view.php?id=510868",
 
     /* Show the amber "To be confirmed" notices (conflicts / gaps in the source material).
        Set to false once the course team has resolved them. */

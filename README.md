@@ -37,7 +37,7 @@ In `js/data.js`, under `config`:
 
 ```js
 zoomUrl: "https://…",      // one link for all live sessions (currently set)
-feedbackUrl: "",           // paste the https:// feedback form link here
+feedbackUrl: "https://ecampus.itcilo.org/mod/feedback/view.php?id=510868",  // feedback form (currently set)
 ```
 
 - With a `zoomUrl`, every online session shows a working **Join on Zoom** button. Without one, it shows a disabled **Zoom link coming soon** button.

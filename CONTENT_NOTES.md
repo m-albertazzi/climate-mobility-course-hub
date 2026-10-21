@@ -12,7 +12,7 @@ Internal notes for the course team (not linked from the site).
 | Duration (about 60 hours, 5–10 hours a week), language, three phases, subtitle | Course webpage: https://www.itcilo.org/courses/exploring-labour-dimensions-climate-change-and-human-mobility |
 | Colours | Course illustration |
 | Footer address and website | ITCILO brand guidelines |
-| Zoom link, deadlines, passing mark, contact email, image credit, course code | Provided by the course team |
+| Zoom link, feedback form link, deadlines, passing mark, contact email, image credit, course code | Provided by the course team |
 
 Not used: prices, fees, application dates or procedures, the other course’s hub content, and the module texts / case studies (not uploaded or linked).
 
@@ -42,7 +42,6 @@ Not used: prices, fees, application dates or procedures, the other course’s hu
 - Final assignment topic and format; any threshold for the Certificate of Participation.
 - How groups and case studies are allocated; group work submission details.
 - Whether attendance at live sessions is required (not listed as a scored component).
-- Feedback form link.
 - Photographs for resource persons.
 
 ## Previous editions
