@@ -18,7 +18,7 @@ js/simulation.js    Simulation player (screens, accessibility, path download)
 css/styles.css      Styles and colour palette
 assets/img/         Hero image, ITCILO logo, favicon
 assets/people/      Put resource-person photographs here
-assets/fonts/       Noto Sans (SIL Open Font License)
+assets/fonts/       Noto Sans variable font, weight and width axes (SIL Open Font License)
 ```
 
 ## Updating content
@@ -100,6 +100,6 @@ All paths are relative, so the site works under the project path. The `.nojekyll
 ## Credits
 
 - ITCILO logo and brand: International Training Centre of the ILO.
-- Fonts: Noto Sans, SIL Open Font License 1.1 (`assets/fonts/OFL-NotoSans.txt`).
+- Fonts: Noto Sans (variable, used at the SemiCondensed width), SIL Open Font License 1.1 (`assets/fonts/OFL-NotoSans.txt`). Type sizes and spacing follow the compact scale of the reference hub: body 16 px, headings 1.35 to 2.1 rem, card padding 18 px.
 - Course illustration: Samuele Omati (credited in the footer).
 - The course handbook and module texts are background material only and are deliberately not part of this repository.
