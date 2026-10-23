@@ -100,6 +100,6 @@ All paths are relative, so the site works under the project path. The `.nojekyll
 ## Credits
 
 - ITCILO logo and brand: International Training Centre of the ILO.
-- Fonts: Noto Sans (variable, used at the SemiCondensed width), SIL Open Font License 1.1 (`assets/fonts/OFL-NotoSans.txt`). Type sizes and spacing follow the compact scale of the reference hub: body 16 px, headings 1.35 to 2.1 rem, card padding 18 px.
+- Fonts: Noto Sans (variable, used at the SemiCondensed width), SIL Open Font License 1.1 (`assets/fonts/OFL-NotoSans.txt`). The palette is the illustration's warm tones plus one contrasting accent, deep teal (`--teal`, `--teal-d`, `--teal-l`, `--teal-xl` in `css/styles.css`), used for the active menu item, the next-session and about panels, live-session badges, date boxes, the feature cards and positive changes in the simulation. Type sizes and spacing follow the compact scale of the reference hub: body 16 px, headings 1.35 to 2.1 rem, card padding 18 px.
 - Course illustration: Samuele Omati (credited in the footer).
 - The course handbook and module texts are background material only and are deliberately not part of this repository.
