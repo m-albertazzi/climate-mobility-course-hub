@@ -563,3 +563,5 @@ details[open] { padding-bottom: 4px; }
 .linkbtn { font: inherit; background: none; border: 0; padding: 4px 2px; color: var(--rust); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .linkbtn:hover { color: var(--rust-d); }
 @media (max-width: 1023px) { .sim { scroll-margin-top: 88px; } }
+.callout--note p { margin: 0; display: flex; gap: 10px; align-items: flex-start; }
+.callout--note .icon { flex: none; margin-top: .3em; color: var(--rust); }

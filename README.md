@@ -63,7 +63,7 @@ The **Simulation** tab plays the course team's decision scenario: four acts, thr
 - **Content** is in `js/scenario.js` (`window.SCENARIO = {…}`), which is the course team's `three-shores-scenario.json` wrapped in one line. To update it, replace everything after `window.SCENARIO = ` with the new JSON and keep the final `;`. Nothing else needs to change.
 - **Scoring** is in `js/sim-engine.js`. Please do not change it without re-checking the storyboard's reference runs (see `CONTENT_NOTES.md`, item 14).
 - **Nothing is stored or sent.** Progress lives in the page until it is closed or restarted. At the end, participants can download their path as a text file to compare in discussion.
-- **Draft notice.** The “Draft for review” box on the tab is one of the notices controlled by `showDraftNotices` in `js/data.js`. Set it to `false` once the content is cleared.
+- **Note on the tab.** The short note above the simulation (a learning tool in a fictional scenario; ratings are the course team's reading, not official ILO positions) is plain text in `index.html`, under `panel-simulation`.
 - Quick check of the rules (needs Node): load `js/scenario.js`, pass `window.SCENARIO` to `js/sim-engine.js` and replay the four reference runs listed in the storyboard.
 
 ## Resource-person photographs
