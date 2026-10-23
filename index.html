@@ -35,6 +35,8 @@
     <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5.5M12 7.8v.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4M12 13v4.5m0 0-2-2m2 2 2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-calendar-add" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4M12 13v4.5m0 0-2-2m2 2 2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   </svg>
 
@@ -330,6 +332,10 @@
                 <span role="listitem" class="badge badge--online"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg>Live online (Zoom)</span>
               </div>
               <p class="legend-note">All twelve live sessions are online on Zoom. No in-person sessions are planned.</p>
+              <div class="tt-calendar">
+                <button type="button" class="btn btn--secondary" data-ics-all><svg class="icon" aria-hidden="true"><use href="#i-calendar-add"/></svg>Download all sessions (.ics)</button>
+                <span class="tt-calendar__note">One calendar file with all 12 live sessions. Each session also has its own button below. Works with Outlook, Google Calendar and Apple Calendar.</span>
+              </div>
               <div class="tt-controls">
                 <button type="button" class="toggle" id="tz-toggle" aria-pressed="false">
                   <span class="toggle__track" aria-hidden="true"><span class="toggle__thumb"></span></span>
@@ -443,6 +449,7 @@
     </div>
   </div>
 
+  <div id="live-status" class="sr-only" role="status" aria-live="polite"></div>
   <noscript><p class="noscript-note">The Timetable, Resource Persons and Participants sections need JavaScript to display.</p></noscript>
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>

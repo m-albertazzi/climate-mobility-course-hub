@@ -434,3 +434,8 @@ details[open] { padding-bottom: 4px; }
 .person { border-top: 5px solid var(--terracotta); }
 .stack > .block { margin-top: 2.75rem; }
 .stack > .stats { margin-top: 1.75rem; }
+
+/* calendar + zoom actions */
+.session__actions .btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.tt-calendar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 14px 0; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
+.tt-calendar__note { font-size: .88rem; color: var(--ink-2); flex: 1 1 260px; }

@@ -45,6 +45,14 @@ feedbackUrl: "https://ecampus.itcilo.org/mod/feedback/view.php?id=510868",  // f
 - With a `feedbackUrl`, the Feedback tab shows an **Open the feedback form** button; without one it shows a disabled **Feedback form link coming soon** placeholder.
 - Only `https://` links are accepted.
 
+## Calendar files (.ics)
+
+- Every live session card has an **Add to calendar (.ics)** button, and the Timetable has a **Download all sessions (.ics)** button (one file with all live sessions).
+- Files are generated in the browser from `js/data.js` (nothing is stored or uploaded) and open in Outlook, Google Calendar and Apple Calendar. Times are written in UTC, so each calendar shows them in the participant's own time zone.
+- Each event contains the session title, the short abstract, the Zoom link (also as the location) and a link back to the hub timetable. Session 11 is marked “title to be confirmed” until the title is settled.
+- Each session has a fixed event ID, so re-importing an updated file updates the event rather than duplicating it in most calendar apps.
+- If a session's date, time, title or Zoom link changes in `js/data.js`, the files update automatically; participants who already imported them need to download the file again.
+
 ## Resource-person photographs
 
 1. Save the image in `assets/people/`, for example `assets/people/atle-solberg.jpg` (square, at least 224 × 224 px; JPG or WebP).

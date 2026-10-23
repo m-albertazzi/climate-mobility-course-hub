@@ -30,6 +30,7 @@ Not used: prices, fees, application dates or procedures, the other course’s hu
 
 10. **Overview text supplied by the course team** (Learning approach, Recognition, Practical information) is published as supplied, with these corrections confirmed by the course team: course dates 26 October – 4 December 2026; “an introduction and five online modules” (not 8); only the Diploma for Labour Migration Experts and Practitioners is mentioned. The “Who the course is for” section was removed at the course team’s request. The Overview layout (stats, about box, objective cards, phase and feature cards, module cards, recognition / practical-information split) is modelled on the reference hub, in the hero-image palette.
 11. **Hero image** is shown as the header on every tab. The earlier Overview facts block, key dates and the requirements “to be confirmed” notice were removed at the course team’s request; the module list returns as cards (“Modules and live sessions”).
+12. **Zoom and calendar buttons** — every live session has a “Join on Zoom” button and an “Add to calendar (.ics)” button; the Timetable has “Download all sessions (.ics)”. All sessions use the single Zoom link supplied by the course team. The calendar events carry the abstract, the Zoom link and the hub timetable link, and no speaker names or readings. Calendar times assume CET (UTC+1) for all dates, as in the timetable.
 
 ## Resource persons
 

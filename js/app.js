@@ -61,8 +61,7 @@
     if (url) {
       return '<a class="btn btn--primary" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + icon("video") + 'Join on Zoom<span class="sr-only"> — Session ' + s.number + ' (opens in a new tab)</span></a>';
     }
-    return '<button type="button" class="btn" disabled aria-disabled="true" aria-describedby="zoomhint-' + s.number + '">' + icon("video") + 'Zoom link coming soon</button>' +
-      '<span class="hint" id="zoomhint-' + s.number + '">Placeholder — the course team will add the Zoom link.</span>';
+    return '<button type="button" class="btn" disabled aria-disabled="true" aria-describedby="zoomhint-' + s.number + '">' + icon("video") + 'Zoom link coming soon</button>';
   }
 
   function formatBadge(f) {
@@ -96,7 +95,9 @@
       h += "</details>";
     }
     var z = zoomHtml(s);
-    if (z) h += '<div class="session__actions">' + z + "</div>";
+    h += '<div class="session__actions"><div class="btns">' + z +
+      '<button type="button" class="btn btn--secondary" data-ics="' + s.number + '">' + icon("calendar") + 'Add to calendar (.ics)<span class="sr-only"> — Session ' + s.number + "</span></button></div>" +
+      (z.indexOf("disabled") > -1 ? '<span class="hint" id="zoomhint-' + s.number + '">Placeholder — the course team will add the Zoom link.</span>' : "") + "</div>";
     h += "</div></article>";
     return h;
   }
@@ -170,6 +171,86 @@
       });
     });
   }
+
+  /* ---------- calendar files (.ics) ---------- */
+  function icsEscape(t) {
+    return String(t == null ? "" : t).replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\r?\n/g, "\\n");
+  }
+  function icsFold(line) {
+    // RFC 5545: lines are limited to 75 octets; continuation lines start with one space
+    var out = [], cur = "", bytes = 0, limit = 75;
+    Array.from(line).forEach(function (ch) {
+      var b = unescape(encodeURIComponent(ch)).length;
+      if (bytes + b > limit) { out.push(cur); cur = " " + ch; bytes = 1 + b; limit = 75; }
+      else { cur += ch; bytes += b; }
+    });
+    out.push(cur);
+    return out.join("\r\n");
+  }
+  function icsStamp(d) {
+    function p(n) { return (n < 10 ? "0" : "") + n; }
+    return d.getUTCFullYear() + p(d.getUTCMonth() + 1) + p(d.getUTCDate()) + "T" + p(d.getUTCHours()) + p(d.getUTCMinutes()) + p(d.getUTCSeconds()) + "Z";
+  }
+  function zoomFor(s) { return isHttps(s.zoomUrl) ? s.zoomUrl : (isHttps(cfg.zoomUrl) ? cfg.zoomUrl : ""); }
+  function hubUrl() { return location.href.split("#")[0] + "#timetable"; }
+  function eventLines(s, stamp) {
+    var zoom = zoomFor(s);
+    var title = "Session " + s.number + ": " + s.title + (s.titleTbc ? " (title to be confirmed)" : "");
+    var desc = [s.abstract];
+    if (zoom) desc.push("Join on Zoom: " + zoom);
+    desc.push("Course Hub timetable: " + hubUrl());
+    var L = [
+      "BEGIN:VEVENT",
+      "UID:session-" + s.number + "-a9719044@itcilo-course-hub",
+      "DTSTAMP:" + stamp,
+      "DTSTART:" + icsStamp(utcOf(s, s.start)),
+      "DTEND:" + icsStamp(utcOf(s, s.end)),
+      "SUMMARY:" + icsEscape(title),
+      "DESCRIPTION:" + icsEscape(desc.join("\n\n"))
+    ];
+    if (zoom) { L.push("LOCATION:" + icsEscape(zoom)); L.push("URL:" + zoom); }
+    L.push("STATUS:CONFIRMED", "TRANSP:OPAQUE", "END:VEVENT");
+    return L;
+  }
+  function buildCalendar(list) {
+    var stamp = icsStamp(new Date());
+    var L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//ITCILO//Course Hub A9719044//EN", "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
+      "X-WR-CALNAME:" + icsEscape("Climate change and human mobility — live sessions")];
+    list.forEach(function (s) { L = L.concat(eventLines(s, stamp)); });
+    L.push("END:VCALENDAR");
+    return L.map(icsFold).join("\r\n") + "\r\n";
+  }
+  function downloadText(filename, text) {
+    var blob = new Blob([text], { type: "text/calendar;charset=utf-8" });
+    if (window.navigator && window.navigator.msSaveOrOpenBlob) { window.navigator.msSaveOrOpenBlob(blob, filename); return; }
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = filename; a.rel = "noopener";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+  }
+  function announce(msg) { var el = document.getElementById("live-status"); if (el) { el.textContent = ""; setTimeout(function () { el.textContent = msg; }, 50); } }
+  function liveSessions() {
+    return C.sessions.filter(function (s) { return s.format !== "independent"; })
+      .sort(function (a, b) { return utcOf(a, a.start) - utcOf(b, b.start); });
+  }
+  document.addEventListener("click", function (e) {
+    var one = e.target.closest("[data-ics]");
+    if (one) {
+      var n = +one.getAttribute("data-ics");
+      var s = C.sessions.filter(function (x) { return x.number === n; })[0];
+      if (s) {
+        downloadText("climate-mobility-session-" + (n < 10 ? "0" : "") + n + ".ics", buildCalendar([s]));
+        announce("Calendar file for Session " + n + " downloaded.");
+      }
+      return;
+    }
+    if (e.target.closest("[data-ics-all]")) {
+      var all = liveSessions();
+      downloadText("climate-mobility-all-sessions.ics", buildCalendar(all));
+      announce("Calendar file with all " + all.length + " sessions downloaded.");
+    }
+  });
 
   /* ---------- people ---------- */
   var AVATAR = '<svg viewBox="0 0 112 112" role="img" aria-hidden="true" focusable="false"><rect width="112" height="112" fill="#f3e3df"/><circle cx="56" cy="44" r="19" fill="#da845c"/><path d="M16 112c2-26 18-40 40-40s38 14 40 40Z" fill="#8f3b20"/></svg>';
