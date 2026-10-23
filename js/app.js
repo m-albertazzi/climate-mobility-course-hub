@@ -5,7 +5,7 @@
 
   var C = window.COURSE;
   var cfg = C.config;
-  var PANELS = ["overview", "course-requirements", "timetable", "resource-persons", "participants", "feedback"];
+  var PANELS = ["overview", "course-requirements", "timetable", "simulation", "resource-persons", "participants", "feedback"];
   var SITE = "Course Hub · Exploring the labour dimensions of climate change and human mobility";
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

@@ -37,6 +37,8 @@
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
     <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4M12 13v4.5m0 0-2-2m2 2 2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-calendar-add" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4M12 13v4.5m0 0-2-2m2 2 2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-simulation" viewBox="0 0 24 24"><circle cx="6" cy="5.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="5.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="18.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6 8c0 4.5 6 4 6 8M18 8c0 4.5-6 4-6 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19.5h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   </svg>
 
@@ -77,6 +79,7 @@
             <li><a href="#overview" data-panel="overview"><svg class="icon" aria-hidden="true"><use href="#i-overview"/></svg><span>Overview</span></a></li>
             <li><a href="#course-requirements" data-panel="course-requirements"><svg class="icon" aria-hidden="true"><use href="#i-requirements"/></svg><span>Course requirements</span></a></li>
             <li><a href="#timetable" data-panel="timetable"><svg class="icon" aria-hidden="true"><use href="#i-timetable"/></svg><span>Timetable</span></a></li>
+            <li><a href="#simulation" data-panel="simulation"><svg class="icon" aria-hidden="true"><use href="#i-simulation"/></svg><span>Simulation</span></a></li>
             <li><a href="#resource-persons" data-panel="resource-persons"><svg class="icon" aria-hidden="true"><use href="#i-people"/></svg><span>Resource Persons</span></a></li>
             <li><a href="#participants" data-panel="participants"><svg class="icon" aria-hidden="true"><use href="#i-participants"/></svg><span>Participants</span></a></li>
             <li><a href="#feedback" data-panel="feedback"><svg class="icon" aria-hidden="true"><use href="#i-feedback"/></svg><span>Feedback</span></a></li>
@@ -359,6 +362,22 @@
         </section>
 
         <!-- ================= RESOURCE PERSONS ================= -->
+        <!-- ================= SIMULATION ================= -->
+        <section class="panel" id="panel-simulation" data-title="Simulation" aria-labelledby="h-sim" hidden>
+          <header class="page-head">
+            <p class="eyebrow">Decision simulation</p>
+            <h1 id="h-sim" tabindex="-1">Simulation: Three Shores</h1>
+            <p class="lead">Make the decisions of a negotiator, a council representative, a union organiser and an employers’ representative in one fictional island state, and see what each choice leaves behind.</p>
+          </header>
+          <div class="stack">
+            <section class="callout callout--draft draft-notice" aria-labelledby="h-sim-draft">
+              <h2 id="h-sim-draft"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>Draft for review</h2>
+              <p>Content, framing and indicator balance have not yet been cleared with ILO counterparts. Statements about international instruments are still to be checked before release.</p>
+            </section>
+            <div id="sim-root" class="sim" data-act="0"><p class="source-note">The simulation needs JavaScript to run.</p></div>
+          </div>
+        </section>
+
         <section class="panel" id="panel-resource-persons" data-title="Resource Persons" aria-labelledby="h-rp" hidden>
           <header class="page-head">
             <p class="eyebrow">Speakers and facilitators</p>
@@ -438,6 +457,7 @@
               <li><a href="#overview">Overview</a></li>
               <li><a href="#course-requirements">Course requirements</a></li>
               <li><a href="#timetable">Timetable</a></li>
+              <li><a href="#simulation">Simulation</a></li>
               <li><a href="#resource-persons">Resource Persons</a></li>
               <li><a href="#participants">Participants</a></li>
               <li><a href="#feedback">Feedback</a></li>
@@ -450,8 +470,11 @@
   </div>
 
   <div id="live-status" class="sr-only" role="status" aria-live="polite"></div>
-  <noscript><p class="noscript-note">The Timetable, Resource Persons and Participants sections need JavaScript to display.</p></noscript>
+  <noscript><p class="noscript-note">The Timetable, Simulation, Resource Persons and Participants sections need JavaScript to display.</p></noscript>
   <script src="js/data.js"></script>
+  <script src="js/scenario.js"></script>
+  <script src="js/sim-engine.js"></script>
+  <script src="js/simulation.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

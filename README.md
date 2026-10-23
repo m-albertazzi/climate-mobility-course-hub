@@ -1,7 +1,7 @@
 # Course Hub — Exploring the labour dimensions of climate change and human mobility
 
 Participant course hub for the ITCILO online course (26 October – 4 December 2026).
-A static site (HTML, CSS, JavaScript — no build step) with six tabs: **Overview**, **Course requirements**, **Timetable**, **Resource Persons**, **Participants** and **Feedback**.
+A static site (HTML, CSS, JavaScript — no build step) with seven tabs: **Overview**, **Course requirements**, **Timetable**, **Simulation**, **Resource Persons**, **Participants** and **Feedback**.
 
 Nothing is stored or submitted by the site: there are no forms, cookies or participant data.
 Open points in the source material (conflicts, missing information) are listed in [`CONTENT_NOTES.md`](CONTENT_NOTES.md).
@@ -12,6 +12,9 @@ Open points in the source material (conflicts, missing information) are listed i
 index.html          Page structure; Overview and Course requirements text
 js/data.js          Timetable, sessions, resource persons, participants, Zoom and feedback links
 js/app.js           Navigation, rendering, time-zone toggle (no content here)
+js/scenario.js      Simulation content: acts, decisions, options, endings (Three Shores)
+js/sim-engine.js    Simulation scoring rules (no content, no screen code)
+js/simulation.js    Simulation player (screens, accessibility, path download)
 css/styles.css      Styles and colour palette
 assets/img/         Hero image, ITCILO logo, favicon
 assets/people/      Put resource-person photographs here
@@ -52,6 +55,16 @@ feedbackUrl: "https://ecampus.itcilo.org/mod/feedback/view.php?id=510868",  // f
 - Each event contains the session title, the short abstract, the Zoom link (also as the location) and a link back to the hub timetable. Session 11 is marked “title to be confirmed” until the title is settled.
 - Each session has a fixed event ID, so re-importing an updated file updates the event rather than duplicating it in most calendar apps.
 - If a session's date, time, title or Zoom link changes in `js/data.js`, the files update automatically; participants who already imported them need to download the file again.
+
+## Simulation (Three Shores)
+
+The **Simulation** tab plays the course team's decision scenario: four acts, three decisions each, four indicators (Choice, Voice, Work, Capacity), carried-forward consequences, locked options and an ending assembled from the final indicators.
+
+- **Content** is in `js/scenario.js` (`window.SCENARIO = {…}`), which is the course team's `three-shores-scenario.json` wrapped in one line. To update it, replace everything after `window.SCENARIO = ` with the new JSON and keep the final `;`. Nothing else needs to change.
+- **Scoring** is in `js/sim-engine.js`. Please do not change it without re-checking the storyboard's reference runs (see `CONTENT_NOTES.md`, item 14).
+- **Nothing is stored or sent.** Progress lives in the page until it is closed or restarted. At the end, participants can download their path as a text file to compare in discussion.
+- **Draft notice.** The “Draft for review” box on the tab is one of the notices controlled by `showDraftNotices` in `js/data.js`. Set it to `false` once the content is cleared.
+- Quick check of the rules (needs Node): load `js/scenario.js`, pass `window.SCENARIO` to `js/sim-engine.js` and replay the four reference runs listed in the storyboard.
 
 ## Resource-person photographs
 
