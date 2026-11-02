@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-rp="off">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,7 +80,7 @@
             <li><a href="#course-requirements" data-panel="course-requirements"><svg class="icon" aria-hidden="true"><use href="#i-requirements"/></svg><span>Course requirements</span></a></li>
             <li><a href="#timetable" data-panel="timetable"><svg class="icon" aria-hidden="true"><use href="#i-timetable"/></svg><span>Timetable</span></a></li>
             <li><a href="#simulation" data-panel="simulation"><svg class="icon" aria-hidden="true"><use href="#i-simulation"/></svg><span>Simulation</span></a></li>
-            <li><a href="#resource-persons" data-panel="resource-persons"><svg class="icon" aria-hidden="true"><use href="#i-people"/></svg><span>Resource Persons</span></a></li>
+            <li data-rp-item><a href="#resource-persons" data-panel="resource-persons"><svg class="icon" aria-hidden="true"><use href="#i-people"/></svg><span>Resource Persons</span></a></li>
             <li><a href="#participants" data-panel="participants"><svg class="icon" aria-hidden="true"><use href="#i-participants"/></svg><span>Participants</span></a></li>
             <li><a href="#feedback" data-panel="feedback"><svg class="icon" aria-hidden="true"><use href="#i-feedback"/></svg><span>Feedback</span></a></li>
           </ul>
@@ -102,7 +102,7 @@
           <header class="view-head">
             <p class="eyebrow">Overview</p>
             <h1 id="h-overview" tabindex="-1">Welcome to the course hub</h1>
-            <p class="lead">Everything you need to follow the course from start to finish: the timetable, what counts towards completion, the resource persons and the feedback form.</p>
+            <p class="lead">Everything you need to follow the course from start to finish: the timetable, what counts towards completion<span data-rp-item>, the resource persons</span> and the feedback form.</p>
             <ul class="chips" aria-label="Course at a glance">
               <li><svg class="icon" aria-hidden="true"><use href="#i-timetable"/></svg>26 October – 4 December 2026</li>
               <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>6 weeks · online</li>
@@ -113,7 +113,7 @@
             </div>
             <div class="btn-row btn-row--tight">
               <a class="btn btn--secondary btn--small" href="#course-requirements">Course requirements</a>
-              <a class="btn btn--secondary btn--small" href="#resource-persons">Resource Persons</a>
+              <a class="btn btn--secondary btn--small" data-rp-item href="#resource-persons">Resource Persons</a>
               <a class="btn btn--secondary btn--small" href="#participants">Participants</a>
               <a class="btn btn--secondary btn--small" href="#feedback">Feedback</a>
             </div>
@@ -457,7 +457,7 @@
               <li><a href="#course-requirements">Course requirements</a></li>
               <li><a href="#timetable">Timetable</a></li>
               <li><a href="#simulation">Simulation</a></li>
-              <li><a href="#resource-persons">Resource Persons</a></li>
+              <li data-rp-item><a href="#resource-persons">Resource Persons</a></li>
               <li><a href="#participants">Participants</a></li>
               <li><a href="#feedback">Feedback</a></li>
             </ul>
@@ -469,7 +469,7 @@
   </div>
 
   <div id="live-status" class="sr-only" role="status" aria-live="polite"></div>
-  <noscript><p class="noscript-note">The Timetable, Simulation, Resource Persons and Participants sections need JavaScript to display.</p></noscript>
+  <noscript><p class="noscript-note">The Timetable, Simulation, <span data-rp-item>Resource Persons </span>and Participants sections need JavaScript to display.</p></noscript>
   <script src="js/data.js"></script>
   <script src="js/scenario.js"></script>
   <script src="js/sim-engine.js"></script>

@@ -1,7 +1,7 @@
 # Course Hub — Exploring the labour dimensions of climate change and human mobility
 
 Participant course hub for the ITCILO online course (26 October – 4 December 2026).
-A static site (HTML, CSS, JavaScript — no build step) with seven tabs: **Overview**, **Course requirements**, **Timetable**, **Simulation**, **Resource Persons**, **Participants** and **Feedback**.
+A static site (HTML, CSS, JavaScript — no build step) with seven tabs: **Overview**, **Course requirements**, **Timetable**, **Simulation**, **Resource Persons** (currently hidden, see below), **Participants** and **Feedback**.
 
 Nothing is stored or submitted by the site: there are no forms, cookies or participant data.
 Open points in the source material (conflicts, missing information) are listed in [`CONTENT_NOTES.md`](CONTENT_NOTES.md).
@@ -65,6 +65,10 @@ The **Simulation** tab plays the course team's decision scenario: four acts, thr
 - **Nothing is stored or sent.** Progress lives in the page until it is closed or restarted. At the end, participants can download their path as a text file to compare in discussion.
 - **Note on the tab.** The short note above the simulation (a learning tool in a fictional scenario; ratings are the course team's reading, not official ILO positions) is plain text in `index.html`, under `panel-simulation`.
 - Quick check of the rules (needs Node): load `js/scenario.js`, pass `window.SCENARIO` to `js/sim-engine.js` and replay the four reference runs listed in the storyboard.
+
+## Showing or hiding the Resource Persons tab
+
+The tab is currently **hidden**: the `<html>` tag in `index.html` carries `data-rp="off"`. That removes it from the menu, the footer and the Overview shortcuts, and a direct link to `#resource-persons` opens the Overview. The content stays in place. To show the tab again, delete `data-rp="off"` from the `<html>` tag.
 
 ## Resource-person photographs
 

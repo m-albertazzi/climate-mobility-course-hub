@@ -6,6 +6,8 @@
   var C = window.COURSE;
   var cfg = C.config;
   var PANELS = ["overview", "course-requirements", "timetable", "simulation", "resource-persons", "participants", "feedback"];
+  // The Resource Persons tab is switched off with data-rp="off" on the <html> tag in index.html.
+  if (document.documentElement.getAttribute("data-rp") === "off") PANELS = PANELS.filter(function (p) { return p !== "resource-persons"; });
   var SITE = "Course Hub · Exploring the labour dimensions of climate change and human mobility";
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
